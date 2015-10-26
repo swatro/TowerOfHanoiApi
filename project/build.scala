@@ -4,6 +4,7 @@ import org.scalatra.sbt._
 import org.scalatra.sbt.PluginKeys._
 import com.mojolly.scalate.ScalatePlugin._
 import ScalateKeys._
+import com.typesafe.sbt.packager.archetypes.JavaAppPackaging
 
 object MyScalatraWebAppBuild extends Build {
   val Organization = "com.example"
@@ -27,7 +28,7 @@ object MyScalatraWebAppBuild extends Build {
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
         "org.scalatra" %% "scalatra-specs2" % ScalatraVersion % "test",
         "ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
-        "org.eclipse.jetty" % "jetty-webapp" % "9.2.10.v20150310" % "container",
+        "org.eclipse.jetty" % "jetty-webapp" % "9.2.10.v20150310" % "compile;container",
         "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
         "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
       ),
@@ -44,5 +45,5 @@ object MyScalatraWebAppBuild extends Build {
         )
       }
     )
-  )
+  ).enablePlugins(JavaAppPackaging)
 }
