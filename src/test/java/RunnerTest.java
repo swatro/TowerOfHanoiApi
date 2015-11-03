@@ -14,7 +14,7 @@ public class RunnerTest {
     public void shouldCreateGameBoard() throws Exception {
         Runner runner = new Runner();
         List<Tower> towers = runner.createStartTowersWith(4, 3);
-        assertThat(new Printer().printDiskLocations(towers), is("T: ABCD, T2: 0 disks, T3: 0 disks"));
+        assertThat(new Printer().printDiskLocations(towers), is("T1: ABCD, T2: 0 disks, T3: 0 disks"));
 
     }
 }
