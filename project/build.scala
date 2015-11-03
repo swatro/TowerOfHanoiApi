@@ -30,7 +30,9 @@ object MyScalatraWebAppBuild extends Build {
         "ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
         "org.eclipse.jetty" % "jetty-webapp" % "9.2.10.v20150310" % "compile;container",
         "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
-        "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
+        "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13",
+        "junit" % "junit" % "4.11" % "test",
+        "com.novocode" % "junit-interface" % "0.10" % "test"
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(
